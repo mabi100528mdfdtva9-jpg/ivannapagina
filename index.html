@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivannamarid  Página personal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fcf4f6;
+            color: #40373b;
+            transition: 0.4s;
+        }
+
+        header {
+            background: linear-gradient(120deg, #e5b7c9, #f8e7ed);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            font-weight: normal;
+            margin: 15px 0;
+            color: #694453;
+        }
+
+        header p {
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        nav {
+            background: #292429;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 18px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.activo {
+            color: #e5b7c9;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0000000d;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: normal;
+            color: #9b6279;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            color: #9b6279;
+        }
+
+        .subtitulo {
+            color: #b08b53;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .presentacion {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .foto {
+            width: 250px;
+            height: 300px;
+            background: #f2dce5;
+            border: 2px solid #c6a16b;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #9b6279;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .texto {
+            flex: 1;
+            min-width: 200px;
+            line-height: 1.9;
+        }
+
+        .linea {
+            width: 70px;
+            height: 3px;
+            background: #c6a16b;
+            margin-bottom: 20px;
+        }
+
+        .intereses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .intereses span {
+            background: #f5e1e9;
+            color: #b64e77;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: #fcf4f6;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e5c6d2;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px #00000015;
+        }
+
+        .tarjeta p {
+            line-height: 1.7;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #ad758a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: #8e586e;
+        }
+
+        #tema {
+            background: transparent;
+            border: 1px solid #e5b7c9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #292429;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            border-top: 3px solid #c6a16b;
+        }
+
+        /* MODO OSCURO */
+
+        body.oscuro {
+            background: #211e22;
+            color: #eee2e7;
+        }
+
+        body.oscuro section {
+            background: #302830;
+        }
+
+        body.oscuro .tarjeta {
+            background: #3c3039;
+            border-color: #654957;
+        }
+
+        body.oscuro h2,
+        body.oscuro h3 {
+            color: #e5b7c9;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .foto {
+                margin: auto;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p>PÁGINA PERSONAL</p>
+        <h1>Ivannamarid</h1>
+        <p>INTERESES, EXPERIENCIAS Y ASPIRACIONES</p>
+    </header>
+
+    <nav>
+        <a class="activo" href="index.html">Inicio</a>
+        <a href="gustos.html">Mis gustos</a>
+        <a href="metas.html">Mis metas</a>
+      
+    </nav>
+
+    <main>
+
+        <section class="presentacion">
+
+            <div class="foto">
+                 <img src="static/imagen/niña.jpg" >
+            </div>
+
+            <div class="texto">
+                <p class="subtitulo">01 / PRESENTACIÓN</p>
+
+                <h2>Un poco sobre mí</h2>
+
+                <div class="linea"></div>
+
+                <p>
+                    Hola, soy Ivannamarid. Me considero una persona
+                    que disfruta de los pequeños momentos de la vida.
+                    Amo los gatos, los atardeceres, la repostería,
+                    el básquetbol y las películas.
+                </p>
+
+                <p>
+                    En mi tiempo libre me gusta preparar postres,
+                    escuchar música y descansar. Una de mis
+                    características distintivas son mis pecas.
+                </p>
+
+                <a class="boton" href="gustos.html">
+                    Conoce más sobre mí
+                </a>
+            </div>
+
+        </section>
+
+        <section>
+
+            <p class="subtitulo">02 / INTERESES</p>
+
+            <h2>Las cosas que disfruto</h2>
+
+            <div class="linea"></div>
+
+            <div class="intereses">
+                <span>Repostería</span>
+                <span>Gatos</span>
+                <span>Atardeceres</span>
+                <span>Básquetbol</span>
+                <span>Cine</span>
+                <span>Música</span>
+                <span>Tecnología</span>
+            </div>
+
+        </section>
+
+        <section>
+
+            <p class="subtitulo">03 / EXPLORA</p>
+
+            <h2>Conoce mi página</h2>
+
+            <div class="linea"></div>
+
+            <div class="contenedor">
+
+                <article class="tarjeta">
+                    <h3>Mis gustos personales</h3>
+
+                    <p>
+                        Descubre las actividades que disfruto,
+                        mis pasatiempos y mis géneros musicales
+                        favoritos.
+                    </p>
+
+                    <a class="boton" href="gustos.html">
+                        Ver mis gustos
+                    </a>
+                </article>
+
+                <article class="tarjeta">
+                    <h3>Mis metas a futuro</h3>
+
+                    <p>
+                        Conoce mis aspiraciones profesionales
+                        y los objetivos que quiero alcanzar
+                        a lo largo de mi vida.
+                    </p>
+
+                    <a class="boton" href="metas.html">
+                        Ver mis metas
+                    </a>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

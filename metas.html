@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivannamarid | Mis metas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fcf4f6;
+            color: #40373b;
+            transition: 0.4s;
+        }
+
+        header {
+            background: linear-gradient(120deg, #e5b7c9, #f8e7ed);
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            font-weight: normal;
+            color: #694453;
+            margin: 15px 0;
+        }
+
+        header p {
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        nav {
+            background: #292429;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 18px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.activo {
+            color: #e5b7c9;
+        }
+
+        main {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #0000000d;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-weight: normal;
+            color: #9b6279;
+        }
+
+        h3 {
+            font-family: Georgia, serif;
+            color: #9b6279;
+            font-size: 23px;
+        }
+
+        .subtitulo {
+            color: #b08b53;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .linea {
+            width: 70px;
+            height: 3px;
+            background: #c6a16b;
+            margin-bottom: 25px;
+        }
+
+        .carrera {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .imagen {
+            width: 340px;
+            max-width: 100%;
+            height: 280px;
+            background: #efd8e2;
+            border: 2px solid #c6a16b;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9b6279;
+            overflow: hidden;
+        }
+
+        .imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .texto {
+            flex: 1;
+            min-width: 200px;
+            line-height: 1.8;
+        }
+
+        .habilidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: #fcf4f6;
+            padding: 25px;
+            border: 1px solid #e5c6d2;
+            border-radius: 10px;
+            line-height: 1.7;
+            transition: 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .etapa {
+            border-left: 3px solid #c6a16b;
+            padding: 5px 25px 20px;
+            margin: 20px 10px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .etapa::before {
+            content: "";
+            width: 13px;
+            height: 13px;
+            background: #ad758a;
+            border: 3px solid #f5e1e9;
+            border-radius: 50%;
+            position: absolute;
+            left: -11px;
+            top: 10px;
+        }
+
+        .reflexion {
+            text-align: center;
+            background: #f5e1e9;
+            border-top: 3px solid #c6a16b;
+            line-height: 1.8;
+        }
+
+        .boton {
+            display: inline-block;
+            background: #ad758a;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: #8e586e;
+        }
+
+        #tema {
+            background: transparent;
+            border: 1px solid #e5b7c9;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #frase {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 22px;
+            color: #86576a;
+        }
+
+        footer {
+            background: #292429;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            border-top: 3px solid #c6a16b;
+        }
+
+        body.oscuro {
+            background: #211e22;
+            color: #eee2e7;
+        }
+
+        body.oscuro section {
+            background: #302830;
+        }
+
+        body.oscuro .tarjeta {
+            background: #3c3039;
+            border-color: #654957;
+        }
+
+        body.oscuro h2,
+        body.oscuro h3,
+        body.oscuro #frase {
+            color: #e5b7c9;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 15px;
+            }
+
+            header h1 {
+                font-size: 35px;
+            }
+
+            section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p>IVANNAMARID / PROYECTO DE VIDA</p>
+        <h1>Mis metas a futuro</h1>
+        <p>PREPARACIÓN ACADÉMICA Y PROFESIONAL</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="gustos.html">Mis gustos</a>
+        <a class="activo" href="metas.html">Mis metas</a>
+       
+    </nav>
+
+    <main>
+
+        <section>
+
+            <p class="subtitulo">01 / MI VOCACIÓN</p>
+
+            <h2>Mi futuro profesional</h2>
+
+            <div class="linea"></div>
+
+            <div class="carrera">
+
+                <div class="imagen">
+                    Fotografía de ingeniería
+                </div>
+
+                <div class="texto">
+
+                    <h3>
+                        Ingeniería Militar en Computación
+                        e Informática
+                    </h3>
+
+                    <p>
+                        Una de mis mayores aspiraciones es
+                        convertirme en ingeniera militar en
+                        computación e informática.
+                    </p>
+
+                    <p>
+                        Me interesa esta carrera porque combina
+                        la tecnología, la programación, la
+                        disciplina y la preparación profesional.
+                    </p>
+
+                    <p>
+                        Quiero seguir aprendiendo y desarrollar
+                        los conocimientos necesarios para
+                        alcanzar esta meta.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <p class="subtitulo">02 / PREPARACIÓN</p>
+
+            <h2>Habilidades que quiero desarrollar</h2>
+
+            <div class="linea"></div>
+
+            <div class="habilidades">
+
+                <div class="tarjeta">
+                    <h3>Programación</h3>
+                    <p>
+                        Aprender diferentes lenguajes y desarrollar
+                        soluciones mediante la tecnología.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Informática</h3>
+                    <p>
+                        Ampliar mis conocimientos sobre sistemas
+                        computacionales y herramientas digitales.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Disciplina</h3>
+                    <p>
+                        Fortalecer mi organización, responsabilidad
+                        y constancia en mis estudios.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <p class="subtitulo">03 / OBJETIVOS</p>
+
+            <h2>Mi camino hacia el futuro</h2>
+
+            <div class="linea"></div>
+
+            <div class="etapa">
+                <span class="subtitulo">CORTO PLAZO</span>
+
+                <h3>Concluir mis estudios</h3>
+
+                <p>
+                    Terminar satisfactoriamente mi preparación
+                    académica actual y continuar aprendiendo
+                    sobre programación.
+                </p>
+            </div>
+
+            <div class="etapa">
+                <span class="subtitulo">MEDIANO PLAZO</span>
+
+                <h3>Continuar mi formación</h3>
+
+                <p>
+                    Prepararme para ingresar a la carrera que
+                    me interesa y fortalecer mis conocimientos
+                    académicos.
+                </p>
+            </div>
+
+            <div class="etapa">
+                <span class="subtitulo">LARGO PLAZO</span>
+
+                <h3>Desarrollarme profesionalmente</h3>
+
+                <p>
+                    Concluir mi carrera, adquirir experiencia
+                    y seguir creciendo dentro del área de
+                    computación e informática.
+                </p>
+            </div>
+        <div style="text-align: center;">
+            <a class="boton" href="index.html">
+                Regresar al inicio
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Ivannamarid | Página personal | 2026</p>
+        <p>Diseño y desarrollo web</p>
+    </footer>
+
+
+</body>
+</html>
+
